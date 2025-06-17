@@ -53,5 +53,7 @@ print("F1 score:", f1_score(test_data["label"], y_pred, average="weighted"))
 logging.info("Сохраняю модели")
 filename_tfidf = "models/tfidf_adv.sav"
 filename_logreg = "models/grid_adv.sav"
-pickle.dump((grid.best_estimator_.named_steps["tfidf"]), open(filename_tfidf, "wb"))
-pickle.dump((grid.best_estimator_.named_steps["clf"]), open(filename_logreg, "wb"))
+with open(filename_logreg, 'wb') as file:
+    pickle.dump((grid.best_estimator_.named_steps["clf"]), file=file)
+with open(filename_tfidf, 'wb') as file:
+    pickle.dump((grid.best_estimator_.named_steps["tfidf"]), file=file)
