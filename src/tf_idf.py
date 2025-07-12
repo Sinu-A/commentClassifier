@@ -38,8 +38,8 @@ print(
 )
 
 logging.info("Сохраняю модели")
-filename_tfidf = "models/tfidf_preupd.sav"
-filename_logreg = "models/logreg_preupd.sav"
+filename_tfidf = "models/tfidf_preupd.pkl"
+filename_logreg = "models/logreg_preupd.pkl"
 with open(filename_logreg, 'wb') as file:
     pickle.dump(logreg, file=file)
 with open(filename_tfidf, 'wb') as file:

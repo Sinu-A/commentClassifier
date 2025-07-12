@@ -14,11 +14,11 @@ df = df[["Комментарии", "Эмоциональная окраска"]]
 df.columns = ["text", "label"]
 print(df.head())
 
-logging.info("Убираем лишние пробелы из окраски и приводим их в нижний регистр")
+logging.info("Убираю лишние пробелы из окраски и приводим их в нижний регистр")
 df["label"] = df["label"].apply(lambda x: x.strip().lower())
 df["label"] = df["label"].map({"негативная": 0, "позитивная": 1, "нейтральная": 2, "мусор": 3})
 
-logging.info("удаляем пропуски")
+logging.info("удаляю пропуски")
 df = df.dropna()
 
 
